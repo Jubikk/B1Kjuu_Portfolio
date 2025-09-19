@@ -17,7 +17,7 @@ const Navigation = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsScrolling(false);
-    }, 1500);
+    }, 1000);
     setScrollTimeout(timeout);
 
     return () => clearTimeout(timeout);
