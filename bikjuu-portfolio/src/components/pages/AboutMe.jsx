@@ -3,7 +3,7 @@
 const AboutMe = () => {
 
   return (
-    <section id="aboutme" className="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-8">
+    <section id="aboutme" className="min-h-screen flex flex-col justify-center items-center p-8">
       <h1 className="text-4xl font-bold mb-6 text-center">About Me</h1>
       <p className="max-w-3xl text-lg text-gray-700 leading-relaxed mb-6 text-center">
         Hello! I'm B1Kjuu, a passionate developer with a love for creating innovative solutions. 
