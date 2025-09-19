@@ -1,4 +1,3 @@
-import react from 'react';
 import { useEffect, useState} from 'react';
 import {Info, FolderKanban, CircleUser} from 'lucide-react';
 
@@ -6,6 +5,30 @@ import {Info, FolderKanban, CircleUser} from 'lucide-react';
 
 const Navigation = () => {
 
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [scrollTimeout, setScrollTimeout] = useState(null);
+
+  const handleScroll = (event) => {
+    setIsScrolling(true);
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+  };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsScrolling(false);
+    }, 1500);
+    setScrollTimeout(timeout);
+
+    return () => clearTimeout(timeout);
+  }
+  , [isScrolling]);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
    return (
     <nav className="fixed right-0 top-1/2 transform -translate-y-1/2 p-4">
@@ -15,7 +38,14 @@ const Navigation = () => {
             href="#" 
             className="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
           >
-            About Me <Info className="inline-block ml-2 mb-1" size={16} />
+            {isScrolling ? (
+              <Info className="inline-block" size={16} />
+            ) : (
+              <>
+            About Me 
+            <Info className="inline-block ml-2 mb-1" size={16} />
+              </>
+            )}
           </a>
         </li>
         <li>
