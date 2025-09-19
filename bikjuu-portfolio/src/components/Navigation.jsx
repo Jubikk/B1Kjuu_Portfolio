@@ -7,6 +7,17 @@ const Navigation = () => {
 
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleVisibility = () => {
+    setIsVisible(!isVisible);
+  }
+
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
 
   const handleScroll = (event) => {
     setIsScrolling(true);
@@ -38,7 +49,7 @@ const Navigation = () => {
             href="#" 
             className="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
           >
-            {isScrolling ? (
+            {(isScrolling || clicked) && isVisible ? (
               <Info className="inline-block" size={16} />
             ) : (
               <>
@@ -52,16 +63,29 @@ const Navigation = () => {
           <a 
             href="#" 
             className="block px-6 py-3 text-white bg-blue-600  hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
-          > 
+          >
+            {(isScrolling || clicked) && isVisible ? (
+              <FolderKanban className="inline-block" size={16} />
+            ) : (
+            <>
             Projects <FolderKanban className="inline-block ml-2 mb-1" size={16} />
+            </>
+            )}
           </a>
         </li>
         <li>
           <a 
             href="#" 
             className="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
-          >
-            Get in Touch! <CircleUser className="inline-block ml-2 mb-1" size={16} />
+          > 
+            {(isScrolling || clicked) && isVisible ? (
+              <CircleUser className="inline-block" size={16} />
+            ) : (
+            <>
+            Get in Touch! 
+            <CircleUser className="inline-block ml-2 mb-1" size={16} />
+            </>
+            )}
           </a>
         </li>
       </ul>
