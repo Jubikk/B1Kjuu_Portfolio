@@ -1,18 +1,11 @@
-import Navigation from './components/Navigation'
-import AboutMe from './components/pages/AboutMe'
-import LandingPage from './components/pages/LandingPage'
-import Background
+import WholePage from "./components/WholePage"
 
-from './components/pages/Background'
 function App() {
 
   return (
     <>
     <div>
-      <Navigation/>
-      <LandingPage/>
-      <AboutMe/>
-      <Background/>
+      <WholePage/>
     </div>
     </>
   )
