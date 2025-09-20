@@ -42,48 +42,47 @@ const Navigation = () => {
   }, []);
 
    return (
-    <nav className="fixed right-0 top-1/2 transform -translate-y-1/2 p-4">
-      <ul className="flex flex-col space-y-6">
+    <nav className="fixed right-0 top-1/2 transform -translate-y-1/2 p-3">
+      <ul className="flex flex-col space-y-4">
         <li>
           <a 
-            href="#" 
-            className="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
+            href="#aboutMe" 
+            className="block px-6 py-4 text-white bg-blue-600/70 hover:bg-blue-700/50 font-medium rounded-4xl transition-all duration-300 text-center min-w-[100px]"
           >
-            {(isScrolling || clicked) && isVisible ? (
+            { (isScrolling || clicked) ? (
               <Info className="inline-block" size={16} />
             ) : (
-              <>
+              <div>
             About Me 
-            <Info className="inline-block ml-2 mb-1" size={16} />
-              </>
+              </div>
             )}
           </a>
         </li>
         <li>
           <a 
-            href="#" 
-            className="block px-6 py-3 text-white bg-blue-600  hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
+            href="#projects" 
+            className="block px-6 py-4 text-white bg-blue-600/70  hover:bg-blue-700/50 font-medium rounded-4xl transition-all duration-300 text-center min-w-[140px]"
           >
-            {(isScrolling || clicked) && isVisible ? (
+            {(isScrolling || clicked) ? (
               <FolderKanban className="inline-block" size={16} />
-            ) : (
+            ) :  (
+            
             <>
-            Projects <FolderKanban className="inline-block ml-2 mb-1" size={16} />
+            Projects 
             </>
             )}
           </a>
         </li>
         <li>
           <a 
-            href="#" 
-            className="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
+            href="../pages/Contact.jsx" 
+            className="block px-6 py-4 text-white bg-blue-600/70 hover:bg-blue-700/50 font-medium rounded-4xl transition-all duration-300 text-center min-w-[140px]"
           > 
             {(isScrolling || clicked) && isVisible ? (
               <CircleUser className="inline-block" size={16} />
             ) : (
             <>
             Get in Touch! 
-            <CircleUser className="inline-block ml-2 mb-1" size={16} />
             </>
             )}
           </a>
