@@ -3,6 +3,8 @@ import Navigation from './Navigation.jsx'
 import AboutMe from './pages/AboutMe'
 import LandingPage from './pages/LandingPage'
 import Background from './pages/Background'
+import Contacts from './pages/Contacts'
+import Projects from './pages/Projects'
 import { Sun, Moon } from 'lucide-react'
 
 function WholePage() {
@@ -48,6 +50,8 @@ function WholePage() {
         <LandingPage />
         <AboutMe />
         <Background />
+        <Projects />
+        <Contacts />
       </div>
     </>
   )

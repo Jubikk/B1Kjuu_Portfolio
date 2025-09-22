@@ -1,5 +1,5 @@
 import { useEffect, useState} from 'react';
-import {Info, FolderKanban, CircleUser} from 'lucide-react';
+import {Info, FolderKanban, CircleUser, BookOpen} from 'lucide-react';
 
 
 
@@ -54,7 +54,6 @@ const Navigation = () => {
             ) : (
               <>
             About Me 
-            <Info className="inline-block ml-2 mb-1" size={16} />
               </>
             )}
           </a>
@@ -65,12 +64,25 @@ const Navigation = () => {
             className="block px-6 py-3 text-white bg-blue-600  hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
           >
             {(isScrolling || clicked) && isVisible ? (
-              <FolderKanban className="inline-block" size={16} />
+              <BookOpen className="inline-block" size={16} />
             ) : (
-            <>
-            Projects <FolderKanban className="inline-block ml-2 mb-1" size={16} />
+            <>  
+            Background
             </>
             )}
+          </a>
+        </li>
+        <li>
+          <a href="#" 
+            className="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-all duration-300 text-center min-w-[140px]"
+          >
+            {(isScrolling || clicked) && isVisible ? (
+              <FolderKanban className="inline-block" size={16} />
+            ) : (
+              <>
+              Projects
+              </>
+            )} 
           </a>
         </li>
         <li>
@@ -83,7 +95,6 @@ const Navigation = () => {
             ) : (
             <>
             Get in Touch! 
-            <CircleUser className="inline-block ml-2 mb-1" size={16} />
             </>
             )}
           </a>
